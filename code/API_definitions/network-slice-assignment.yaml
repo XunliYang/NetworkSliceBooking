@@ -1169,31 +1169,6 @@ components:
                 status: 410
                 code: GONE
                 message: Access to the target resource is no longer available.
-    NetworkSliceBooking422:
-      description: Unprocessable Content
-      headers:
-        x-correlator:
-          $ref: "#/components/headers/x-correlator"
-      content:
-        application/json:
-          schema:
-            allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
-              - type: object
-                properties:
-                  status:
-                    enum:
-                      - 422
-                  code:
-                    enum:
-                      - NETWORK_SLICE_BOOKING.RESOURCES_NOT_APPLICABLE
-          examples:
-            NETWORK_SLICE_BOOKING_422_RESOURCES_NOT_APPLICABLE:
-              description: Request cannot be processed due to business logic validation failure, e.g. service area is not supported or resources are insufficient
-              value:
-                status: 422
-                code: NETWORK_SLICE_BOOKING.RESOURCES_NOT_APPLICABLE
-                message: The request resources are not applicable for slice creation.
     Generic422:
       description: Unprocessable Content
       headers:
