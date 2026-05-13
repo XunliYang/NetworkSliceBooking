@@ -623,7 +623,7 @@ components:
             serviceArea is a geographical area where the network slice will be reserved.
             It can be defined as a circle or a polygon.
           allOf:
-            - $ref: "#/components/schemas/Area"
+            - $ref: "../common/CAMARA_common.yaml#/components/schemas/Area"
         sliceQosProfile:
           description: |
             sliceQosProfile is a set of quality of service parameters that define the requirements for the network slice.
@@ -753,94 +753,6 @@ components:
           $ref: "#/components/schemas/DateTime"
       required:
         - startDate
-
-    Area:
-      description: Base schema for all areas
-      type: object
-      properties:
-        areaType:
-          $ref: "#/components/schemas/AreaType"
-      required:
-        - areaType
-      discriminator:
-        propertyName: areaType
-        mapping:
-          CIRCLE: "#/components/schemas/Circle"
-          POLYGON: "#/components/schemas/Polygon"
-
-    AreaType:
-      type: string
-      description: |
-        Type of this area.
-        CIRCLE - The area is defined as a circle.
-        POLYGON - The area is defined as a polygon.
-      enum:
-        - CIRCLE
-        - POLYGON
-
-    Circle:
-      description: Circular area
-      allOf:
-        - $ref: "#/components/schemas/Area"
-        - type: object
-          required:
-            - center
-            - radius
-          properties:
-            center:
-              $ref: "#/components/schemas/Point"
-            radius:
-              type: number
-              description: Distance from the center in meters
-              minimum: 1
-
-    Polygon:
-      description: Polygonal area. The Polygon should be a simple polygon, i.e. should not intersect itself.
-      allOf:
-        - $ref: "#/components/schemas/Area"
-        - type: object
-          required:
-            - boundary
-          properties:
-            boundary:
-              $ref: "#/components/schemas/PointList"
-
-    PointList:
-      description: List of points defining a polygon
-      type: array
-      items:
-        $ref: "#/components/schemas/Point"
-      minItems: 3
-      maxItems: 15
-
-    Point:
-      type: object
-      description: Coordinates (latitude, longitude) defining a location in a map
-      required:
-        - latitude
-        - longitude
-      properties:
-        latitude:
-          $ref: "#/components/schemas/Latitude"
-        longitude:
-          $ref: "#/components/schemas/Longitude"
-      example:
-        latitude: 31.22529
-        longitude: 121.48905
-
-    Latitude:
-      description: Latitude component of a location
-      type: number
-      format: double
-      minimum: -90
-      maximum: 90
-
-    Longitude:
-      description: Longitude component of location
-      type: number
-      format: double
-      minimum: -180
-      maximum: 180
 
     ErrorInfo:
       type: object
