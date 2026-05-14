@@ -45,9 +45,6 @@ The API definition(s) are based on
 * Update Spring26 M4 release plan to public-release by @XunliYang in https://github.com/camaraproject/NetworkSliceBooking/pull/110
 * Sync common files from Commonalities r4.2 by @camara-release-automation[bot] in https://github.com/camaraproject/NetworkSliceBooking/pull/111
 * Modify r2.2 release plan from public back to release-candidate by @XunliYang in https://github.com/camaraproject/NetworkSliceBooking/pull/114
-* Update API definitions with corrected defaults and schema constraints-align with commonalities r4.2 by @XunliYang in https://github.com/camaraproject/NetworkSliceBooking/pull/116
-* [bulk] Update release-automation + validation callers by @camara-release-automation[bot] in https://github.com/camaraproject/NetworkSliceBooking/pull/118
-* Fix validation issues: Adopt Commonalities r4.2 $refs for common event schemas  by @XunliYang in https://github.com/camaraproject/NetworkSliceBooking/pull/120
 
 ## New Contributors
 * @camara-release-automation[bot] made their first contribution in https://github.com/camaraproject/NetworkSliceBooking/pull/104
@@ -66,19 +63,14 @@ The API definition(s) are based on
 
 ### Added
 
-* _To be filled during release review_
+* Add maxLength requirement applies to all string properties in https://github.com/camaraproject/NetworkSliceBooking/pull/108
+* Add maxItems requirement for array properties, maximum requirement for object properties and description for all properties in https://github.com/camaraproject/NetworkSliceBooking/pull/116
 
 ### Changed
 
-* _To be filled during release review_
-
-### Fixed
-
-* _To be filled during release review_
-
-### Removed
-
-* _To be filled during release review_
+* Change the callback requestbody schema changes from CloudEvent to ApiNotificationEvent aligning with commonalities r4.2 in https://github.com/camaraproject/NetworkSliceBooking/pull/108
+* Modify the apiRoot path to `http://localhost:9091` in https://github.com/camaraproject/NetworkSliceBooking/pull/116
+* Replace inline CloudEvent + sink-credential schemas and inline area / geometry schemas with $refs into CAMARA_event_common.yaml in https://github.com/camaraproject/NetworkSliceBooking/pull/120
 
 ## network-slice-assignment 0.1.0-rc.2
 
@@ -91,19 +83,15 @@ The API definition(s) are based on
 
 ### Added
 
-* _To be filled during release review_
+* Add maxLength requirement applies to all string properties in https://github.com/camaraproject/NetworkSliceBooking/pull/108
+* Add maxItems requirement for array properties, maximum requirement for object properties and description for all properties in https://github.com/camaraproject/NetworkSliceBooking/pull/116
 
 ### Changed
 
-* _To be filled during release review_
+* Change the callback requestbody schema changes from CloudEvent to ApiNotificationEvent aligning with commonalities r4.2 in https://github.com/camaraproject/NetworkSliceBooking/pull/108
+* Modify the apiRoot path to `http://localhost:9091` in https://github.com/camaraproject/NetworkSliceBooking/pull/116
+* Replace inline CloudEvent + sink-credential schemas and inline area / geometry schemas with $refs into CAMARA_event_common.yaml in https://github.com/camaraproject/NetworkSliceBooking/pull/120
 
-### Fixed
-
-* _To be filled during release review_
-
-### Removed
-
-* _To be filled during release review_
 
 **Full Changelog**: https://github.com/camaraproject/NetworkSliceBooking/compare/r2.1...r2.2
 
