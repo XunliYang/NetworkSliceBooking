@@ -441,29 +441,6 @@ components:
       required:
         - startDate
 
-    ErrorInfo:
-      type: object
-      description: A structured error response providing details about a failed request, including the HTTP status code, an error code, and a human-readable message
-      required:
-        - status
-        - code
-        - message
-      properties:
-        status:
-          type: integer
-          format: int32
-          minimum: 100
-          maximum: 599
-          description: HTTP response status code
-        code:
-          type: string
-          maxLength: 96
-          description: A human-readable code to describe the error
-        message:
-          type: string
-          maxLength: 512
-          description: A human-readable description of what the event represents
-
     ApiEventType:
       type: string
       description: |
@@ -514,7 +491,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
@@ -546,7 +523,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
@@ -572,7 +549,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
@@ -597,7 +574,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
@@ -622,7 +599,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
@@ -647,7 +624,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
@@ -679,7 +656,7 @@ components:
         application/json:
           schema:
             allOf:
-              - $ref: "#/components/schemas/ErrorInfo"
+              - $ref: "../common/CAMARA_common.yaml#/components/schemas/ErrorInfo"
               - type: object
                 properties:
                   status:
